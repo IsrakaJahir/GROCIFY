@@ -5,11 +5,28 @@ use App\Http\Controllers\User\UserLoginController;
 use App\Http\Controllers\User\UserRegistationController;
 use App\Http\Controllers\User\UserDashBoardController;
 use App\Http\Controllers\User\RecordViewController;
+use App\Http\Controllers\ProductController;
+
 
 // Define the index route with a name
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+// Route::get('/', function () {
+//     return view('index');
+// })->name('index');
+
+
+
+Route::get('/', [ProductController::class, 'IndexPage'])->name('index');
+// Route::get('/', [ProductController::class, 'IndexPageCategories'])->name('index');
+
+//productdisplay
+Route::get('/productdisplay',[ProductController::class,'ProductDisplay'])->name('productdisplay');
+
+//All category display
+Route::get('/allcategory',[ProductController::class, 'IndexPageCategories'])->name('allcategory');
+
+// web.php
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
+Route::get('/category/{id}', [ProductController::class, 'showcategories'])->name('categoryshow');
 
 
 

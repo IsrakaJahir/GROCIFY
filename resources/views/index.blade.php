@@ -90,39 +90,61 @@
 
 
 </div>
+</div>
 
-<div class="w-44  bg-white border border-black rounded-lg">
-  <div id="image"> <img src="images/4.png" > </div>
-    <div class="py-2 px-5">hhhh</div>
-  
-  
-  </div>
 
-  <div class="w-44  bg-white border border-black rounded-lg">
-    <div id="image"> <img src="images/4.png" > </div>
-      <div class="py-2 px-5">hhhh</div>
-    
-    
+  <!-- ALL CATEGORIES -->
+  <div class="bg-gray-100 p-6">
+  <h1 class="text-lg font-bold flex justify-center mb-9">ALL CATEGORIES</h1>
+  <div class="container overflow-x-auto">
+    <div class="flex space-x-6">
+      @foreach ($categories as $category)
+        <!-- Product Card -->
+        <div class="bg-white shadow-md rounded-lg overflow-hidden min-w-[250px]">
+          <a href="{{route('categoryshow',$category->id)}}">
+        
+          <img src="{{ asset('images/' . $category->picture) }}" alt="{{ $category->name }}" class="w-full h-48 object-cover">
+</a>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">{{ $category->name }}</h3>
+          
+          </div>
+        </div>
+      @endforeach
     </div>
-
-   
-
-<div class="w-44  bg-white border border-black rounded-lg">
-  <div id="image"> <img src="images/4.png" > </div>
-    <div class="py-2 px-5">hhhh</div>
-  
-  
   </div>
+  <a href="{{route('allcategory')}}"><button class="float-right px-3 mt-4  border border-green-500 rounded-lg"> View All </button>
+</a>
+</div>
 
-  <div class="w-44  bg-white border border-black rounded-lg">
-    <div id="image"> <img src="images/4.png" > </div>
-      <div class="py-2 px-5">hhhh</div>
-    
-    
+
+  <!-- ALL products -->
+  
+  <div class="bg-gray-100 p-6">
+  <h1 class="text-lg font-bold flex justify-center mb-9"> ALL PRODUCTS </h1>
+<div class="container mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        @foreach ($products as $product)
+            <!-- Product Card -->
+            <div class="bg-white shadow-md rounded-lg overflow-hidden  w-[300px]">
+            <a href="{{ route('product.show', $product->id) }}">
+                <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}" class="  flex justify-center h-40 ">
+</a>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold">{{ $product->name }}</h3>
+                    <p class="text-gray-600 mt-2">${{ $product->price }}</p>
+                    
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        @endforeach
     </div>
+</div>
 
+</div>
 
-  </div>
   @endsection
 
 
