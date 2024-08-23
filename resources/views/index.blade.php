@@ -24,7 +24,7 @@
 
  </main>
   <!-- whyBest -->
- <span class=" flex justify-center font-bold font-serif text-2xl w-[100%]">Why We Are The Best?</span>
+ <span class=" flex justify-center font-bold font-serif text-2xl w-[100%]" id="about">Why We Are The Best?</span>
 
 <div id="best" class="flex flex-row items-center mt-7">
   <img src="images/Rectangle 384.png" class=" absolute h-[450px] w-auto mt-[10%] px-5 z-10">

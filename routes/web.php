@@ -24,8 +24,9 @@ Route::get('/productdisplay',[ProductController::class,'ProductDisplay'])->name(
 //All category display
 Route::get('/allcategory',[ProductController::class, 'IndexPageCategories'])->name('allcategory');
 
-// web.php
+// Product details
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
+//Displaying Products by  its category
 Route::get('/category/{id}', [ProductController::class, 'showcategories'])->name('categoryshow');
 
 

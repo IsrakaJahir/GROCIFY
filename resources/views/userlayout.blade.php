@@ -15,15 +15,15 @@
     
     <div class="nav-control gap-5 text-gray-950">
         <span class="px-4">Home</span>
-        <span class="px-4">About</span>
+       <a href="#about"> <span class="px-4">About</span></a>
         <span class="px-4">Contact</span>
         <a href="{{route('productdisplay')}}"
         <span class="px-4">Cart</span>
         </a>
     </div>
     <div class="gap-3 flex flex-row">
-    <a href="{{route('login')}}"> <button class="border border-gray-600 px-5 rounded-lg py-1  h-[40px]">Log In</button></a>
-    <a href="{{route('register')}}"><button class="border border-gray-600 px-4 rounded-lg py-1  h-[40px]">Register</button></a>
+    <a href="{{route('login')}}"> <button class="border border-gray-600 px-5  bg-white rounded-lg py-1  h-[40px]">Log In</button></a>
+    <a href="{{route('register')}}"><button class="border border-gray-600 px-4  bg-white  rounded-lg py-1  h-[40px]">Register</button></a>
     </div> 
 
  </nav> 

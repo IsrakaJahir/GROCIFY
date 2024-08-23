@@ -1,10 +1,12 @@
-<!-- resources/views/pages/user/productdetails.blade.php -->
 @extends('userlayout')
 
 @section('content')
 <div class="container mx-auto p-6">
     <div class="bg-white shadow-md rounded-lg overflow-hidden">
-        <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}" class="w-full h-64 object-cover">
+        <div class="border border-blue-500">
+            <img src="{{ asset('images/' . $product->image) }}" alt="{{ $product->name }}" 
+                 class="w-full h-[100px]">
+        </div>
         <div class="p-6">
             <h1 class="text-3xl font-bold">{{ $product->name }}</h1>
             <p class="text-gray-600 mt-4">${{ $product->price }}</p>
