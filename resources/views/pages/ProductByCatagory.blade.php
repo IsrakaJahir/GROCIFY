@@ -18,11 +18,15 @@
                     +
                 </button>
             </div>
-            
-            <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
-                Add to Bag
-            </button>
-            
+            <form action="{{ route('cartadd') }}" method="post">
+    @csrf
+    <!-- Hidden input to store product ID -->
+    <input type="hidden" name="product_id" value="{{ $product->id }}">
+
+    <button type="submit" class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
+        Add to Bag
+    </button>
+</form>
         </div>
  
     @endforeach

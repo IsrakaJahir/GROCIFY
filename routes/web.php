@@ -6,6 +6,9 @@ use App\Http\Controllers\User\UserRegistationController;
 use App\Http\Controllers\User\UserDashBoardController;
 use App\Http\Controllers\User\RecordViewController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
+
+
 
 
 // Define the index route with a name
@@ -13,6 +16,13 @@ use App\Http\Controllers\ProductController;
 //     return view('index');
 // })->name('index');
 
+
+
+//cart
+Route::get('/cart',[CartController::class,'index'])->name('cartindex');
+Route::post('/cartadd',[CartController::class,'store'])->name('cartadd');
+Route::get('/cartdelete/{id}',[CartController::class,'delete'])->name('cartdelete');
+Route::get('/updatecart/{id}',[CartController::class,'update'])->name('cartupdate');
 
 
 Route::get('/', [ProductController::class, 'IndexPage'])->name('index');

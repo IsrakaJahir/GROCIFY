@@ -17,8 +17,10 @@
         <span class="px-4">Home</span>
        <a href="#about"> <span class="px-4">About</span></a>
         <span class="px-4">Contact</span>
-        <a href="{{route('productdisplay')}}"
+        <a href="{{route('cartindex')}}">
         <span class="px-4">Cart</span>
+        {{ session('ProductCount', 0) }}
+
         </a>
     </div>
     <div class="gap-3 flex flex-row">
